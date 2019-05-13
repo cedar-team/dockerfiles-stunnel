@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.9.4
 
 RUN set -x \
  && addgroup -S stunnel \
@@ -8,7 +8,7 @@ RUN set -x \
         gettext \
         libintl \
         openssl \
-        stunnel \
+        stunnel=5.48-r0 \
  && cp -v /usr/bin/envsubst /usr/local/bin/ \
  && apk del --purge \
         gettext \
